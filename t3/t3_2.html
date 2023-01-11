@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="css/t3_2.css">
+		<script src="js/t3_2.js"></script>
+	</head>
+	<body>
+		<div id="bg">
+			<img id="pointer" src="img/pointer.png" alt="" onclick="start()">
+			<img id="turntable" src="img/turntable.png" alt="">
+			
+		</div>
+	</body>
+<script type="text/javascript">
+			var pointer = document.getElementById("pointer");
+			var turntable = document.getElementById("turntable");
+			var gameover = true;
+			//旋转角度
+			var cat = 51.4;
+			var lenCloc = 0;
+			//点击抽奖按钮
+			function start() {
+				if (gameover) {
+					gameover = !gameover;
+
+					rotate();
+
+
+				}
+			}
+			//旋转开始旋转
+			function rotate() {
+
+				lenCloc++;
+				//随机角度数
+				var timer = null;
+				clearInterval(timer);
+				timer=setInterval(function() {
+					//随机角度
+				
+					var soBuom = parseInt(Math.floor(Math.random() * 51.4) - 25.7);
+					var rdm = lenCloc * 3 * 360 + soBuom;
+
+					turntable.style.transform = "rotate(" + rdm + "deg)"
+					clearInterval(timer);
+					setTimeout(function() {
+						gameover = !gameover;
+						num = rdm % 360;
+						if (num <= cat * 1) {
+							alert("恭喜你获得一等奖4999元免单");
+						} else if (num <= cat * 2) {
+							alert("恭喜你获得二等奖50元免单");
+						} else if (num <= cat * 3) {
+							alert("恭喜你获得三等奖10元免单");
+						} else if (num <= cat * 4) {
+							alert("恭喜你获得四等奖5元免单");
+						} else if (num <= cat * 5) {
+							alert("恭喜你获得五等奖免分期服务费");
+						} else if (num <= cat * 6) {
+							alert("恭喜你获得六等奖提高白条额度");
+						} else if (num <= cat * 7) {
+							alert("恭喜你获得二等奖50元免单");
+						}
+					},4000);
+				}, 30)
+			}
+			</script>
+</html>

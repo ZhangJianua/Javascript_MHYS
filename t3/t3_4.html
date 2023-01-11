@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<h2>这是一个网页背景</h2>
+		<p id="txt"></p>
+		<img id="img"/>
+		
+		<script type="text/javascript">
+			window.onload =function(){
+				if(window.screen.availHeight>1280){
+					document.getElementById("txt").innerHTML="屏幕可用高度大于1280px，使用大图片";
+					document.getElementById("img").src="img/1.jpg";
+				}else{
+					document.getElementById("txt").innerHTML="屏幕可用高度小于1280px，使用小图片";
+					document.getElementById("img").src="img/2.jpg";
+				}
+			}
+		</script>
+	</body>
+</html>

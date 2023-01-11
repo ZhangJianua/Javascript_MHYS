@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var identity = true
+			var money = 340
+			if (identity) {
+				if (money > 200) {
+					money = money * 0.75
+				} else {
+					money = money * 0.9
+				}
+				document.write("会员消费340，实际支付：" + money)
+			} else {
+				if (money > 100) {
+					money = money * 0.9
+
+				}
+				document.write("会员消费340，实际支付：" + money)
+			}
+		</script>
+	</body>
+</html>

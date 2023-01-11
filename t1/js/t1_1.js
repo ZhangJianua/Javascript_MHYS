@@ -1,0 +1,1 @@
+document.write("<a href='http://www.baidu.com'>点击我进入百度首页</a></br>")

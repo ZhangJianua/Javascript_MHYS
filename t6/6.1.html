@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+
+	<body>
+		<select id="sel">
+			<option value="white">白色</option>
+			<option value="purple">紫色</option>
+			<option value="orange">橙色</option>
+			<option value="gray">灰色</option>
+			<option value="yellow">黄色</option>
+		</select>
+	</body>
+	<script type="text/javascript" src="js/jquery-3.6.3.min.js"></script>
+	<script>
+		$(function() {$("#sel").change(
+		function(){
+			$("body").css("background-color",$(this).val())
+		}
+		)})
+	</script>
+</html>
+

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>2.4</title>
+		<style type="text/css">
+			body {
+				font-size: 12px;
+			}
+
+			#login {
+				width: 300px;
+				margin: 0px auto;
+				padding: 100px;
+			}
+
+			#login fieldset {
+				border: 1px solid #ccc;
+				width: 230px;
+				height: 120px;
+				padding: 20px;
+			}
+
+			#login fieldset legend {
+				margin-left: 25px;
+			}
+
+			#login fieldset input {
+				border: 1px solid #ccc;
+			}
+
+			#login fieldset input.txt {
+				width: 1800px;
+			}
+		</style>
+	</head>
+	<body onkeypress="kayFun()">
+		<div id="login">
+			<form action="">
+				<fieldset>
+					<legend>用户登录</legend>
+					<p><label for="">邮箱：</label><input type="text" id="txtEmail"></p>
+					<p><label for="">密码：</label><input type="text" id="txtPwd"></p>
+					<input type="button" value="登录" onClick="checkLogin()"><a href="pwd.html">忘记密码点这里!!!</a>
+					
+				</fieldset>
+			</form>
+		</div>
+	</body>
+	<script type="text/javascript">
+		// 登录方法
+		function checkLogin() {
+			//获取邮箱，密码的值
+			var userEmail = document.getElementById("txtEmail").value
+			var userPwd = document.getElementById("txtPwd").value
+			if (userEmail == "123456@qq.com" && userPwd == "123456") {
+				alert("登录成功")
+			} else {
+				alert("登录失败")
+			}
+		}
+		// 点击回车方法
+		function kayFun(){
+			var kay=event.kaycode
+			if(kay==13){
+				checkLogin()
+			}
+		}
+		
+	</script>
+</html>

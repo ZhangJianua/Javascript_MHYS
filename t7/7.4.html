@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		table{
+			border: 1px solid #dedede;
+			border-collapse: collapse;
+			width: 100%;
+			clear: both;
+		}
+		table tr{
+			height: 50px;
+			vertical-align: middle;
+		}
+		table td.item{
+			width: 400px;
+			height: 60px;
+			text-align: left;
+		}
+		table td.item img{
+			margin-right: 10px;
+			vertical-align: middle;
+		}
+		table tr td.cal{
+			text-align: right;
+		}
+		table tr td.cal span{
+			font: bold 25px Geneva,verdana,sans-serif;
+			color: orange;
+		}
+		table .bat{
+			border: 1px solid #dedede;
+			background-color: white;
+			width: 16px;
+			height: 16px;
+		}
+		table .txt{
+			width: 60px;
+			height: 30px;
+			border: 1px solid #dedede;
+			text-align: center;
+			font: bold 15px/30px Geneva,verdana,sans-serif;
+		}
+		table .txt:hover{
+			border: 1px solid red;
+		}
+	</style>
+	<body>
+		<table id="tabOrder">
+			<tr>
+				<th>项目</th>
+				<th>状态</th>
+				<th>类型/数量</th>
+				<th>单价</th>
+				<th>小计</th>
+			</tr>
+			<tr>
+				<td class="item">
+					<a href=""><img src="img/item1.jpg" align="left">
+						欢乐空间量贩式KTV；欢唱套餐2选一，国家法定节假日许到店另付20元，可升级
+					</a>
+				</td>
+				<td>可购买</td>
+				<td><input type="button" value="-" class="btn btnMinus">
+					<input type="text" class="txt" value="1" disabled="disabled">
+					<input type="button" value="+" class="btn btnAdd">
+				</td>
+				<td>&yen;39.9</td>
+				<td title="price">&yen;39.9</td>
+			</tr>
+			<tr>
+				<td class="item">
+					<a href=""><img src="img/item2.jpg" align="left">
+						途乐时尚主题量贩式KTV：任选一小时欢唱，可升级，提供免费WiFi
+					</a>
+				</td>
+				<td>可购买</td>
+				<td><input type="button" value="-" class="btn btnMinus">
+					<input type="text" class="txt" value="1" disabled="disabled">
+					<input type="button" value="+" class="btn btnAdd">
+				</td>
+				<td>&yen;59.9</td>
+				<td title="price">&yen;59.9</td>
+			</tr>
+			<tr>
+				<td colspan="5" class="cal">已选<span>2</span>件商品应付总额：<span id="spanTotal">&yen;99.8</span>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/jquery-3.6.3.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("ul").css("list-style-type","none")
+				var lis=$("li").get()
+				for(var i=0;i<lis.length;i++){
+					lis[i].style.cssFloat="left"
+					lis[i].style.marginRight="10px"
+				}
+			})
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li><a href="">首页</a></li>
+			<li><a href="">新闻</a></li>
+			<li><a href="">信息</a></li>
+			<li><a href="">关于</a></li>
+		</ul>
+	</body>
+</html>

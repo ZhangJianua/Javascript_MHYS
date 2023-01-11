@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-3.6.3.min.js"></script>
+		<script type="text/javascript">
+		$(function(){
+			$(":input").click(function(){
+				$(":header").css("color","red")
+				$(":header+ul").css("list-style","url(img/list.gif)")
+				$(":header+ul>li>ul").css("list-style","url(img/list_icon.gif)")
+				
+			})
+		})	
+		</script>
+	</head>
+	<body>
+		<h2>Web前端技术</h2>
+		<ul>
+			
+			<li>
+				使用DIV+SCC设计前端页面
+				<ul>
+					<li>页面布局</li>
+					<li>美化页面</li>
+					<li>页面特效</li>
+				</ul>
+			</li>
+			<li>
+				使用JavaScript+jQuery制作页面特效
+				<ul>
+					<li>JavaScript基础</li>
+					<li>jQuery选择器</li>
+					<li>jQuery操作DOM</li>
+				</ul>
+			</li>
+		</ul>
+		<p><input type="button" value="更改样式"></p>
+	</body>
+</html>

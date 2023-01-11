@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-3.6.3.min.js"></script>
+		<script>
+			$(function(){
+				var x=5,y=15
+				$("#small_img").mousemove(function(e){
+					$("#big_img").attr("src",this.src)
+					$("#big_img").css({
+						"top":e.pageY+y+"px",
+						"left":e.pageX+x+"px",
+						"position":"absolute"})
+						$("#big_img").show()
+				})
+				$("#big_img").mouseout(function(e){
+					$("#big_img").hide()
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<img src="img/img_2.jpg" width="100" height="50" id="small_img">
+		<img src="" id="big_img">
+	</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<h2>更改字体颜色和背景颜色</h2>
+		<select id="sel">
+			<option value="white">白色</option>
+			<option value="purple">紫色</option>
+			<option value="orange">橙色</option>
+			<option value="gray">灰色</option>
+			<option value="yellow">黄色</option>
+		</select>
+		<h2>输入颜色单词改变背景颜色</h2>
+		<input type="text" id="sel2">
+		<input type="button" value="确定" onclick="setYanse()">
+		
+		<script type="text/javascript">
+			document.getElementById("sel").onchange=function(){
+				document.bgColor=this.value;
+				document.fgColor=this.value+255;
+			}
+			
+			
+			function setYanse(){
+				var BGyanse=document.getElementById("sel2").value
+				document.bgColor=BGyanse;
+				document.fgColor=BGyanse+255;
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,19 @@
+#bg{
+	width: 650px;
+	height: 600px;
+	margin: 0px auto;
+	background: url(../img/turntable-bg.jpg.jpg)no-repeat ;
+}
+#pointer{
+	position: absolute;
+	z-index: 10;
+	top: 155px;
+	left: 247px;
+}
+#turntable{
+	position: absolute;
+	z-index: 5;
+	top: 60px;
+	left: 116px;
+	transition: all 4s; 
+}

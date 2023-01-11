@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>2.2</title>
+	</head>
+	<body>
+		<input type="text" id="op1">
+		<select name="" id="op">
+			<option value="+">+</option>
+			<option value="-">-</option>
+			<option value="*">*</option>
+			<option value="/">/</option>
+		</select>
+		<input type="text" id="op2">
+		=
+		<input type="text" id="op3">
+		<input type="button" value="计算" id="btn" onclick="calc()">
+
+
+		<script type="text/javascript">
+			function calc() {
+				let num1 = document.getElementById("op1").value
+				let num2 = document.getElementById("op2").value
+				let operator = document.getElementById("op").value
+				if (num1.trim() != "" && num2.trim() != "") {
+					if (!isNaN(num1) && !isNaN(num2)) {
+						document.getElementById("op3").value = eval(num1 + operator + num2)
+					} else {
+						alert("请输入正确的数值")
+					}
+				} else {
+					alert("请输入两个操作数")
+				}
+			}
+		</script>
+	</body>
+</html>

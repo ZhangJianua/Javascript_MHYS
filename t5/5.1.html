@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+
+			#calendar {
+				width: 700px;
+				background-color: lightgray;
+				margin: 20px auto;
+			}
+			#month_year{
+				width: 700px;
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+			}
+			ul li{
+				float: left;
+				width: 100px;
+				height: 50px;
+				text-align: center;
+				line-height: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="calendar">
+			<div id="month_year">
+				<select name="" id="year"></select>年
+				<select name="" id="month"></select>月
+			</div>
+			<ul id="title">
+				<li>星期日</li>
+				<li>星期一</li>
+				<li>星期二</li>
+				<li>星期三</li>
+				<li>星期四</li>
+				<li>星期五</li>
+				<li>星期六</li>
+			</ul>
+			<ul id="dateul"></ul>
+		</div>
+		<script type="text/javascript">
+			var yearSelect=document.getElementById("year")
+			var monthSelect=document.getElementById("month")
+			var dateul=document.getElementById("dateul")
+			//添加选项方法
+			function createOption(text,value,parent){
+				var option=document.createElement("option")
+				option.innerHTML=text
+				option.value=value
+				parent.appendChild(option)
+				
+			}
+			function showSelect(year,month){
+				yearSelect.value=year
+				monthSelect.value=month
+			}
+			function showDates(){
+				
+				dateul.innerHTML=""
+				
+				var year=yearSelect.value
+				var month=monthSelect.value
+				//创建空的<li>元素
+			
+				for(var i=0;i <(getDays(year,month));i++){
+					crrateLi("",dateul)
+				}
+				//创建有日期的<li>元素
+				for(var j=0;j<=getDatasOfMonth(year,month);j++){
+					crrateLi(j,dateul)
+					
+				}
+				
+			}
+			//获取选择的年月的第一天是星期几
+			function getDays(year,month){
+				var d=new Date(year,month,1)
+				
+				return d.getDay()
+				
+				
+			}
+			function crrateLi(text,parent){
+				var li=document.createElement("li")
+				li.innerHTML=text
+				parent.appendChild(li)
+			}
+			function getDatasOfMonth(year,month){
+				var d=new Date(year,month+1,0)
+				return d.getDate()
+			}
+			
+			
+			
+			//初始化
+			function init(){
+				//初始化年份
+				for(var year=1990;year<3000;year++){
+					createOption(year,year,yearSelect)
+					
+				}
+				
+				//初始化月份
+				for(var month=1;month<13;month++){
+					createOption(month,month-1,monthSelect)
+				}
+				var now=new Date()  //获取当前时间
+			
+				showSelect(now.getFullYear(),now.getMonth())//引用显示选项卡的函数
+				showDates()
+				yearSelect.onchange=function(){
+					showDates()
+				}
+				monthSelect.onchange=function(){
+					showDates()
+				}
+			}
+			init()
+		</script>
+	</body>
+	
+</html>

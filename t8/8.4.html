@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0px;
+				padding: 0px;
+			}
+
+			body {
+				font-size: 12px;
+			}
+
+			ul {
+				list-style: none
+			}
+
+			ul li {
+				height: 25px;
+				line-height: 25px;
+			}
+
+			h3 {
+				width: 162px;
+				height: 30px;
+				line-height: 30px;
+				text-align: center;
+				background-color: #C33;
+			}
+
+			#book {
+				overflow: hidden;
+				/* 隐藏溢出的部分 */
+				height: 75px;
+				padding: 5px;
+				border: 1px solid red;
+				width: 150px;
+			}
+		</style>
+	</head>
+	<body>
+		<h3>近七日畅销榜</h3>
+		<div id="book">
+			<ul class="express">
+				<li>傲慢与偏见</li>
+				<li>玻璃鞋全集（50集34vcd）</li>
+				<li>澳大利亚：假日之旅</li>
+				<li>浪漫地中海：假日之旅</li>
+				<li>欧陆风情：假日之旅</li>
+				<li>社交疯狂英语</li>
+
+			</ul>
+		</div>
+	</body>
+	<script src="js/jquery-3.6.3.min.js"></script>
+	<script type="text/javascript">
+		function movebook() {
+			var stopScroll = false;
+			var marginTop = 0;
+			setInterval(function() {
+				if (stopScroll) return;
+				$(".express").children("li").first().animate({
+					marginTop: marginTop--
+				}, 0, function() {
+					// 判断是否在动画状态
+					if (!$(this).is(":animated")) {
+						if ((-marginTop) > $(this).height()) {
+							$(this).css("margin-top", 0).appendTo($(".express"));
+							marginTop = 0:
+						}
+					}
+				})
+			}, 50)
+			$(".express").mouseover(function() {
+			stopScroll= true;
+			}).mouseout(function() {
+			stopScroll=false;
+			})
+		}
+		$(function() (
+		// 书畅销排行榜循环垂直向上滚动
+		movebook()
+		})
+	</script>
+</html>

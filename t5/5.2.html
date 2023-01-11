@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#div{
+				width: 100%;
+				position: absolute;
+				bottom: 50%;
+				text-align: center;
+			}
+			#img{
+				width: 300px;
+				height: 150px;
+			}
+			#input{
+				text-align: center;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<p>图片缩放系数：<input type="text" id="input"></p>
+		<div id="div"><img src="img/OIP-C.jpg" alt="" id="img"></div>
+		
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+			var input=document.getElementById("input")
+			var div=document.getElementById("div")
+			var img=document.getElementById("img")
+			window.onmousemove=function(){
+				var x=img.offsetLeft+img.offsetWidth/2;
+				var y=img.offsetTop+img.offsetHeight/2+div.offsetTop;
+				var b=event.clientX-x;
+				var a=event.clientY-y;
+				var c=Math.sqrt(Math.pow(b,2)+Math.pow(a,2));
+				var scale=Math.floor(c)/100-1;
+				if(scale<0.5){
+					scale=0.5;
+				}else if(scale>3){
+					scale=3;
+				}
+				input.value=scale;
+				img.style.width=scale*300+"px";
+				img.style.height=scale*150+"px";
+				
+			}
+		}
+	</script>
+</html>
